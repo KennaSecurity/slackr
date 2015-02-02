@@ -2,6 +2,7 @@ require "slackr/version"
 require "slackr/errors"
 require "slackr/connection"
 require "slackr/webhooks/incoming"
+require "slackr/webhooks/attachment_formatter"
 require "slackr/channel"
 require "slackr/file_uploader"
 

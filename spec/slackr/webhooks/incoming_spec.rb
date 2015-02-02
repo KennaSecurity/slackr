@@ -50,6 +50,14 @@ describe Slackr::IncomingWebhook do
         expect(result).to eq "{\"channel\":\"#awesometown\",\"text\":\"#{text}\"}"
       end
 
+      it "should encode a message with an attachment formatter option" do
+        text    = "this is my awesome message"
+        options = { formatters: [Slackr::AttachmentFormatter.new({color: "#FFFF"})] }
+
+        result = subject.send(:encode_message, text, options)
+        expect(result).to eq("{\"text\":\"this is my awesome message\",\"attachments\":[{\"fallback\":null,\"color\":\"#FFFF\",\"pretext\":null,\"author_name\":null,\"author_link\":null,\"author_icon\":null,\"title\":null,\"title_link\":null,\"text\":null,\"fields\":null}]}")
+      end
+
       it "should encode a basic message when there are default options" do
         text = "this is my awesome message"
 

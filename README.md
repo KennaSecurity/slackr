@@ -59,11 +59,11 @@ Available customizations include:
 - Slackr::Errors stores the various custom errors thrown
 - Slackr::Version stores the gem version
 - Slackr::IncomingWebhook stores the logic for the various incoming webhook API endpoints
-
+- Slackr::AttachmentFormatter instance can be passed to say() as a ```:formatters``` option.
 ## TODO
 
-- [ ] Support formats for incoming webhook messages
-- [ ] Link parsing and attachments
+- [ ] Support all formats for incoming webhook messages
+- [ ] Link parsing
 - [ ] CLI
 
 ## Contributing
